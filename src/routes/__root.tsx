@@ -86,14 +86,14 @@ function Nav() {
     <header className="fixed inset-x-0 top-0 z-50">
       <nav className="flex items-center justify-between px-6 py-5 md:px-12">
         <Link to="/" className="text-sm font-semibold uppercase tracking-[0.3em] text-foreground">
-          AERO
+          KIMFLIGHTS
         </Link>
         <div className="hidden gap-8 md:flex">
           <Link to="/" className="text-xs uppercase tracking-[0.2em] text-foreground/80 hover:text-foreground">Discover</Link>
-          <a href="#" className="text-xs uppercase tracking-[0.2em] text-foreground/80 hover:text-foreground">Members</a>
-          <a href="#" className="text-xs uppercase tracking-[0.2em] text-foreground/80 hover:text-foreground">Support</a>
+          <Link to="/admin" className="text-xs uppercase tracking-[0.2em] text-foreground/80 hover:text-foreground">Admin</Link>
+          <Link to="/login" className="text-xs uppercase tracking-[0.2em] text-foreground/80 hover:text-foreground">Members</Link>
         </div>
-        <button className="text-xs uppercase tracking-[0.2em] text-foreground/80 hover:text-foreground">Sign in</button>
+        <Link to="/login" className="text-xs uppercase tracking-[0.2em] text-foreground/80 hover:text-foreground">Sign in</Link>
       </nav>
     </header>
   );
