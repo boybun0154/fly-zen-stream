@@ -121,7 +121,7 @@ export function useItinerary() {
   return useSyncExternalStore(
     (cb) => itinerary.subscribe(cb),
     () => itinerary.get(),
-    () => itinerary.get(),
+    () => initialState,
   );
 }
 
