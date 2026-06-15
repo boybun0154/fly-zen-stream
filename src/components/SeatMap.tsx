@@ -44,6 +44,7 @@ interface Props {
   selected: (string | null)[];
   currentPassenger: number;
   onSelect: (seatId: string) => void;
+  onPassengerChange?: (i: number) => void;
   passengerCount: number;
   passengerNames: string[];
 }
@@ -53,6 +54,7 @@ export function SeatMap({
   selected,
   currentPassenger,
   onSelect,
+  onPassengerChange,
   passengerCount,
   passengerNames,
 }: Props) {
