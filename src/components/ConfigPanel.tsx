@@ -38,8 +38,7 @@ export function ConfigPanel({ primary, secondary, onClose }: Props) {
   const seatTierOf = (id: string | null): SeatTier | null => {
     if (!id) return null;
     // Search both maps — seat ids ("12A") may overlap between segments.
-    const hit =
-      primarySeats.find((s) => s.id === id) ?? connectingSeats.find((s) => s.id === id);
+    const hit = primarySeats.find((s) => s.id === id) ?? connectingSeats.find((s) => s.id === id);
     return hit?.tier ?? null;
   };
   const totals = computeTotals(state, seatTierOf);
@@ -214,7 +213,10 @@ export function ConfigPanel({ primary, secondary, onClose }: Props) {
                 className="w-full"
               >
                 <TabsList className="mb-6 w-full">
-                  <TabsTrigger value="primary" className="flex-1 text-[10px] uppercase tracking-[0.2em]">
+                  <TabsTrigger
+                    value="primary"
+                    className="flex-1 text-[10px] uppercase tracking-[0.2em]"
+                  >
                     Flight 1 · {primary.originCode} → {primary.destinationCode}
                   </TabsTrigger>
                   <TabsTrigger

@@ -200,9 +200,7 @@ function Checkout() {
                   const connectingSeat = secondary ? state.selectedSeats.connecting[i] : null;
                   const seatCharge =
                     (inferTier(primarySeat) ? SEAT_TIER_PRICE[inferTier(primarySeat)!] : 0) +
-                    (inferTier(connectingSeat)
-                      ? SEAT_TIER_PRICE[inferTier(connectingSeat)!]
-                      : 0);
+                    (inferTier(connectingSeat) ? SEAT_TIER_PRICE[inferTier(connectingSeat)!] : 0);
                   return (
                     <div key={p.id} className="text-xs text-muted-foreground">
                       <div className="flex justify-between">
@@ -236,7 +234,6 @@ function Checkout() {
                   );
                 })}
               </div>
-
 
               <div className="mt-6 space-y-2 border-t border-border pt-4 text-sm">
                 <Line label="Flights" value={`$${totals.flightTotal.toLocaleString()}`} />

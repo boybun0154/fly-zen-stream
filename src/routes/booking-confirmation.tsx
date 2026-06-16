@@ -169,7 +169,6 @@ function BoardingCard({
   );
 }
 
-
 function FlightLeg({
   from,
   to,
