@@ -70,7 +70,10 @@ function Checkout() {
       secondaryId: secondary?.id ?? null,
       passengers: state.passengers,
       addons: state.addons,
-      seats: state.seats,
+      seats: {
+        primary: state.selectedSeats.primary,
+        connecting: secondary ? state.selectedSeats.connecting : [],
+      },
       total: totals.total,
       contact: { email: contact.email, phone: contact.phone },
     });
