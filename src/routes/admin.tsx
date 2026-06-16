@@ -1,5 +1,5 @@
-import { createFileRoute, redirect } from "@tanstack/react-router";
-import { useState } from "react";
+import { createFileRoute, redirect, useNavigate } from "@tanstack/react-router";
+import { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Table,
@@ -39,6 +39,19 @@ export const Route = createFileRoute("/admin")({
 function Admin() {
   const user = useAuth((s) => s.user);
   const logout = useAuth((s) => s.logout);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) {
+      navigate({ to: "/" });
+    }
+  }, [user, navigate]);
+
+  const handleLogout = () => {
+    logout();
+    navigate({ to: "/" });
+  };
+
   return (
     <main className="min-h-screen bg-background pt-24 pb-24">
       <section className="mx-auto max-w-7xl px-6 md:px-12">
@@ -52,7 +65,7 @@ function Admin() {
             </h1>
           </div>
           <button
-            onClick={logout}
+            onClick={handleLogout}
             className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground"
           >
             <LogOut className="h-3 w-3" /> Sign out
