@@ -88,7 +88,7 @@ function Index() {
             />
             <button
               type="submit"
-              className="m-1 rounded-lg bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-background transition hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-transform"
+              className="m-1 rounded-lg bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-background transition-all hover:opacity-90 hover:scale-[1.02] active:scale-[0.98]"
             >
               Search
             </button>
