@@ -9,7 +9,7 @@ import {
   type SegmentKey,
 } from "@/domains/booking/types";
 import { SeatMap, generateSeats } from "@/components/SeatMap";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+
 import { Check, Briefcase, Luggage, Zap, X } from "lucide-react";
 
 interface Props {
